@@ -24,6 +24,18 @@
   width: 100px;
 }
 
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.burger div {
+  width: 35px;
+  height: 5px;
+  background-color: black;
+  margin: 5px 0;
+}
+
 @media (max-width: 768px) {
   .logo {
     display: none;
@@ -32,6 +44,16 @@
   .navbar {
     transition: 0.8s all ease;
     display: flex;
-    justify-content: center;
+    justify-content: right;
+  }
+
+  .navList {
+    display: none;
+    flex-direction: column;
+  }
+
+  .burger {
+    display: block;
+    padding: 1.7em;
   }
 }

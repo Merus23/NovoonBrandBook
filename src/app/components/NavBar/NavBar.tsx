@@ -27,6 +27,12 @@ function NavBar({ items }: Props) {
           </li>
         ))}
       </ul>
+
+      <div className={styles.burger}>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </nav>
   );
 }
