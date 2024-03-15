@@ -1,8 +1,7 @@
 import React, { ReactNode } from "react";
 import styles from "./NavBar.module.css";
 import Link from "next/link";
-import Image from "next/image";
-import logo from "../../../../public/assets/logo.png";
+import Image, { StaticImageData } from "next/image";
 
 type Item = {
   title: string;
@@ -10,10 +9,11 @@ type Item = {
 };
 
 type Props = {
+  logo: StaticImageData;
   items: Item[];
 };
 
-function NavBar({ items }: Props) {
+function NavBar({ logo, items }: Props) {
   return (
     <nav className={styles.navbar}>
       <Link href="/">
