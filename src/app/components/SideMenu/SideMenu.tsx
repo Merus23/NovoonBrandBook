@@ -19,7 +19,7 @@ type Props = {
 
 function SideMenu({ isOpen, onClose, menuSections }: Props) {
   return (
-    <div className={`fixed flex-col bg-white text-black border-l border-black w-screen h-screen md:right-0 z-10 md:w-56 transition-transform duration-300 ${isOpen ? 'md:translate-x-64 translate-x-full ' : '-translate-x-0'}`}>
+    <div className={`fixed flex-col bg-white text-black border-l border-black w-screen h-screen md:right-0 z-20 md:w-56 transition-transform duration-300 ${isOpen ? 'md:translate-x-64 translate-x-full ' : '-translate-x-0'}`}>
       <ul className='h-full flex flex-col justify-between'>
         {menuSections.map((section, sectionIndex) => (
           <React.Fragment key={sectionIndex}>
