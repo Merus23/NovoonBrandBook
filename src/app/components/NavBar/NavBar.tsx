@@ -38,7 +38,7 @@ function NavBar({ logo, items }: Props) {
           <li>
             <Link
               href={item.link}
-              className="text-gray-700 hover:text-gray-900 scale-100 transition-tranform duration-700 hover:scale-150"
+              className="inline-block text-gray-700 hover:text-gray-900 transform scale-100 transition-transform duration-700 hover:scale-110"
             >
               {item.title}
             </Link>
