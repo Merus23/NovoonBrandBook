@@ -18,24 +18,10 @@ export default function Home() {
         title="Essence"
         items={[
           {
-            title: "Resources",
-            content: [
-              { title: "Next", link: "https://nextjs.org/" },
-              { title: "Tailwind CSS", link: "https://tailwindcss.com/" }
-            ]
-          },
-          {
             title: "Follow us",
             content: [
               { title: "Github", link: "#" },
               { title: "Discord", link: "#" }
-            ]
-          },
-          {
-            title: "Legal",
-            content: [
-              { title: "Privacy Policy", link: "#" },
-              { title: "Terms & Conditions", link: "#" }
             ]
           }
         ]}

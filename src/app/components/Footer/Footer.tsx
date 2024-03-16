@@ -21,10 +21,28 @@ type Content = {
 type Props = {
   src: StaticImageData;
   title: string;
-  items: Item[];
+  items?: Item[];
 };
 
+const defaultItems: Item[] = [
+  {
+    title: "Resources",
+    content: [
+      { title: "Next", link: "https://nextjs.org/" },
+      { title: "Tailwind CSS", link: "https://tailwindcss.com/" }
+    ]
+  },
+  {
+    title: "Legal",
+    content: [
+      { title: "Privacy Policy", link: "#" },
+      { title: "Terms & Conditions", link: "#" }
+    ]
+  }
+];
+
 function Footer({ src, title, items }: Props) {
+  items = items?.concat(defaultItems) || defaultItems;
   return (
     <footer className="bg-white">
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
