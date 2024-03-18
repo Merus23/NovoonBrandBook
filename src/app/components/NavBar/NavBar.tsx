@@ -1,7 +1,6 @@
 "use client";
 
 import React, { ReactNode, useState } from "react";
-import styles from "./NavBar.module.css";
 import Link from "next/link";
 import Image, { StaticImageData } from "next/image";
 import { FaBars } from "react-icons/fa";
