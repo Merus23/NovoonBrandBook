@@ -11,6 +11,7 @@ export default function Home() {
           { title: "HOME", link: "/home" },
           { title: "CONTACT", link: "/contact" },
           { title: "ABOUT", link: "/about" },
+          { title: "WORK", link: "/work" },
         ]}
       />
     </>
