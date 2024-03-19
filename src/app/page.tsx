@@ -1,40 +1,35 @@
-'use client'
+"use client";
 
-#import NavBar from "./components/NavBar/NavBar";
-import logo from "/public/assets/logo.png";
-import { useState } from 'react';
-import Image from 'next/image';
-import NavBar from './components/NavBarMobile/NavBarMobile';
-import SideMenu from './components/SideMenu/SideMenu';
-import Logo from '/public/assets/images/logo-teste.svg';
+//import NavBar from "./components/NavBar/NavBar";
+import { useState } from "react";
+import Image from "next/image";
+import NavBar from "./components/NavBarMobile/NavBarMobile";
+import SideMenu from "./components/SideMenu/SideMenu";
+import Logo from "/public/assets/images/logo-teste.svg";
 
 const menuSections = [
   {
-    items: [
-      { label: 'Theory', href: '/theory' },
-    ],
+    items: [{ label: "Theory", href: "/theory" }],
   },
   {
-    items: [
-      { label: 'Case Studies', href: '/case-studies' },
-    ],
+    items: [{ label: "Case Studies", href: "/case-studies" }],
   },
   {
-    title: 'Core Elements',
+    title: "Core Elements",
     items: [
-      { label: 'Logos', href: '/logos' },
-      { label: 'Colors', href: '/colors' },
-      { label: 'Voice', href: '/voice' },
-      { label: 'Typography', href: '/typography' },
-      { label: 'Illustrations', href: '/illustrations' },
-      { label: 'Photography', href: '/photography' },
+      { label: "Logos", href: "/logos" },
+      { label: "Colors", href: "/colors" },
+      { label: "Voice", href: "/voice" },
+      { label: "Typography", href: "/typography" },
+      { label: "Illustrations", href: "/illustrations" },
+      { label: "Photography", href: "/photography" },
     ],
   },
 ];
 
 const logo = {
   src: Logo,
-  alt: 'Novoon logo',
+  alt: "Novoon logo",
   width: 50,
   height: 50,
 };
@@ -47,31 +42,39 @@ export default function Home() {
   };
 
   return (
-
-//     <>
-//       <NavBar
-//         logo={logo}
-//         items={[
-//           { title: "HOME", link: "/home" },
-//           { title: "CONTACT", link: "/contact" },
-//           { title: "ABOUT", link: "/about" },
-//           { title: "WORK", link: "/work" },
-//         ]}
-//       />
-//     </>
+    //     <>
+    //       <NavBar
+    //         logo={logo}
+    //         items={[
+    //           { title: "HOME", link: "/home" },
+    //           { title: "CONTACT", link: "/contact" },
+    //           { title: "ABOUT", link: "/about" },
+    //           { title: "WORK", link: "/work" },
+    //         ]}
+    //       />
+    //     </>
 
     <div className="relative flex flex-col items-center">
-      <SideMenu isOpen={show} onClose={toggleSidebar} menuSections={menuSections} />
+      <SideMenu
+        isOpen={show}
+        onClose={toggleSidebar}
+        menuSections={menuSections}
+      />
       <NavBar logo={logo} title="Novoon" onClose={toggleSidebar} />
       <main className="flex flex-col items-center w-full px-16 md:px-28 pt-20 md:pt-0">
-        <div className={`${!show ? 'md:pr-64 transition-margin duration-300' : ''}`}>
+        <div
+          className={`${
+            !show ? "md:pr-64 transition-margin duration-300" : ""
+          }`}
+        >
           <h1 className="text-3xl font-bold p-10">Home</h1>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
           </p>
 
           <p>
@@ -81,10 +84,11 @@ export default function Home() {
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
           </p>
 
           <p>
@@ -94,10 +98,11 @@ export default function Home() {
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
           </p>
 
           <p>
@@ -107,10 +112,11 @@ export default function Home() {
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
           </p>
 
           <p>
@@ -120,10 +126,11 @@ export default function Home() {
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
           </p>
 
           <p>
@@ -133,10 +140,11 @@ export default function Home() {
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
           </p>
 
           <p>
@@ -146,10 +154,11 @@ export default function Home() {
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
           </p>
 
           <p>
@@ -159,10 +168,11 @@ export default function Home() {
 
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
           </p>
 
           <p>
