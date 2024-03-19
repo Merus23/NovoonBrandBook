@@ -1,4 +1,7 @@
 'use client'
+
+#import NavBar from "./components/NavBar/NavBar";
+import logo from "/public/assets/logo.png";
 import { useState } from 'react';
 import Image from 'next/image';
 import NavBar from './components/NavBarMobile/NavBarMobile';
@@ -44,6 +47,19 @@ export default function Home() {
   };
 
   return (
+
+//     <>
+//       <NavBar
+//         logo={logo}
+//         items={[
+//           { title: "HOME", link: "/home" },
+//           { title: "CONTACT", link: "/contact" },
+//           { title: "ABOUT", link: "/about" },
+//           { title: "WORK", link: "/work" },
+//         ]}
+//       />
+//     </>
+
     <div className="relative flex flex-col items-center">
       <SideMenu isOpen={show} onClose={toggleSidebar} menuSections={menuSections} />
       <NavBar logo={logo} title="Novoon" onClose={toggleSidebar} />
