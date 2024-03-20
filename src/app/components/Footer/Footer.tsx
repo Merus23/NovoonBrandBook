@@ -14,37 +14,36 @@ type Item = {
 };
 
 type Content = {
-  title: string;
+  label: string;
   link: string;
 }
 
-type Props = {
-  src: StaticImageData;
-  title: string;
+type Props = Logo & {
   items?: Item[];
+  className?: string;
 };
 
 const defaultItems: Item[] = [
   {
     title: "Resources",
     content: [
-      { title: "Next", link: "https://nextjs.org/" },
-      { title: "Tailwind CSS", link: "https://tailwindcss.com/" }
+      { label: "Next", link: "https://nextjs.org/" },
+      { label: "Tailwind CSS", link: "https://tailwindcss.com/" }
     ]
   },
   {
     title: "Legal",
     content: [
-      { title: "Privacy Policy", link: "#" },
-      { title: "Terms & Conditions", link: "#" }
+      { label: "Privacy Policy", link: "#" },
+      { label: "Terms & Conditions", link: "#" }
     ]
   }
 ];
 
-function Footer({ src, title, items }: Props) {
+function Footer({ src, title, items, className }: Props) {
   items = items?.concat(defaultItems) || defaultItems;
   return (
-    <footer className="bg-white">
+    <footer className={`bg-white ${className}`}>
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -59,8 +58,8 @@ function Footer({ src, title, items }: Props) {
                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">{item.title}</h2>
                 <ul className="text-gray-500 font-medium">
                   {item.content.map((content, index) => (
-                    <li className={index == 0 ? "mb-4" : ""}>
-                      <Link href={content.link} className="hover:underline">{content.title}</Link>
+                    <li className={index != (items!.length - 1) ? "mb-4" : ""}>
+                      <Link href={content.link} className="hover:underline">{content.label}</Link>
                     </li>
                   ))}
                 </ul>
