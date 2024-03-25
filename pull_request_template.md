@@ -11,5 +11,7 @@ Select the types (can be more than one)
 - [ ] docs
 
 ## Description
-Make a short description about the changes
+[Make a short description about the changes]
 
+## Special commands
+[Does the code needs any special commands? If not, you can delete this section]
