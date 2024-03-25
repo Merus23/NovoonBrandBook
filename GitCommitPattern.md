@@ -29,7 +29,6 @@ example `git commit -m "feat: new login checking add"`
 
 # When do a commit
 
-- The component has been finilized;
 - A component has been integrated into a page;
 - The page has been finalized;
 - A structure has been refactored into a component.
