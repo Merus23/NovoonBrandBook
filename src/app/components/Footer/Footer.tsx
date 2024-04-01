@@ -43,7 +43,7 @@ const defaultItems: Item[] = [
 function Footer({ src, title, items, className }: Props) {
   items = items?.concat(defaultItems) || defaultItems;
   return (
-    <footer className={`bg-white ${className}`}>
+    <footer className={`bg-white w-full relative ${className}`}>
       <div className="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
@@ -58,8 +58,8 @@ function Footer({ src, title, items, className }: Props) {
                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase">{item.title}</h2>
                 <ul className="text-gray-500 font-medium">
                   {item.content.map((content, index) => (
-                    <li className={index != (items!.length - 1) ? "mb-4" : ""}>
-                      <Link href={content.link} className="hover:underline">{content.label}</Link>
+                    <li key={index} className={index != (items!.length - 1) ? "mb-4" : ""}>
+                      <Link key={index} href={content.link} className="hover:underline">{content.label}</Link>
                     </li>
                   ))}
                 </ul>
