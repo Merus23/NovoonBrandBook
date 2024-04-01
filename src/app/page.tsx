@@ -1,47 +1,50 @@
-"use client";
+'use client'
 
 //import NavBar from "./components/NavBar/NavBar";
-import { useState } from "react";
-import Image from "next/image";
-import NavBar from "./components/NavBarMobile/NavBarMobile";
-import SideMenu from "./components/SideMenu/SideMenu";
-import Logo from "/public/assets/images/logo-teste.svg";
-import Logo_logo from '/public/assets/logo_logo.png';
-import Footer from "./components/Footer/Footer";
+import { useRef, useState } from 'react'
+import Image from 'next/image'
+import NavBar from './components/NavBarMobile/NavBarMobile'
+import SideMenu from './components/SideMenu/SideMenu'
+import Logo from '/public/assets/images/logo-teste.svg'
+import Logo_logo from '/public/assets/logo_logo.png'
+import Footer from './components/Footer/Footer'
+import MainContent from './components/MainContent/MainContent'
+import PageIntroduction from './components/PageIntroduction/PageIntroduction'
 
 const menuSections = [
   {
-    items: [{ label: "Theory", href: "/theory" }],
+    items: [{ label: 'Theory', href: '/theory' }],
   },
   {
-    items: [{ label: "Case Studies", href: "/case-studies" }],
+    items: [{ label: 'Case Studies', href: '/case-studies' }],
   },
   {
-    title: "Core Elements",
+    title: 'Core Elements',
     items: [
-      { label: "Logos", href: "/logos" },
-      { label: "Colors", href: "/colors" },
-      { label: "Voice", href: "/voice" },
-      { label: "Typography", href: "/typography" },
-      { label: "Illustrations", href: "/illustrations" },
-      { label: "Photography", href: "/photography" },
+      { label: 'Logos', href: '/logos' },
+      { label: 'Colors', href: '/colors' },
+      { label: 'Voice', href: '/voice' },
+      { label: 'Typography', href: '/typography' },
+      { label: 'Illustrations', href: '/illustrations' },
+      { label: 'Photography', href: '/photography' },
     ],
   },
-];
+]
 
 const logo = {
   src: Logo,
-  alt: "Novoon logo",
+  alt: 'Novoon logo',
   width: 50,
   height: 50,
-};
+}
 
 export default function Home() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false)
+  const ref = useRef(null)
 
   const toggleSidebar = () => {
-    setShow(!show);
-  };
+    setShow(!show)
+  }
 
   return (
     //     <>
@@ -55,149 +58,94 @@ export default function Home() {
     //         ]}
     //       />
     //     </>
-    <>
-      <div className="relative flex flex-col items-center">
-        <SideMenu
-          isOpen={show}
-          onClose={toggleSidebar}
-          menuSections={menuSections}
-        />
+    <div className="flex relative">
+      <SideMenu
+        isOpen={show}
+        onClose={toggleSidebar}
+        menuSections={menuSections}
+      />
+      <div
+        className={`transition-margin duration-300 ease-in-out ${
+          show ? 'md:mr-64' : ''
+        }`}
+      >
         <NavBar logo={logo} title="Novoon" onClose={toggleSidebar} />
-        <main className="flex flex-col items-center w-full px-16 md:px-28 pt-20 md:pt-0">
-          <div
-            className={`${!show ? "md:pr-64 transition-margin duration-300" : ""
-              }`}
-          >
-            <h1 className="text-3xl font-bold p-10">Home</h1>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur.
+        <MainContent>
+          <PageIntroduction
+            innerRef={ref}
+            Title="Theory"
+            Description="The Siren is our muse, the face of our brand. Her image and our strong wordmark are our most recognizable brand assets."
+            Legend="The preferred approach is to use the Siren logo by itself, unlocked from the wordmark. This allows flexibility to present the Siren with greater prominence while maintaining a considered, open and modern presentation."
+          />
+          <div className="py-24">
+            <h1 className="text-3xl font-bold my-2">Theory</h1>
+            <p className="mb-8 text-3xl w-full max-w-4xl">
+              The Siren is our muse, the face of our brand. Her image and our
+              strong wordmark are our most recognizable brand assets.
             </p>
-
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur.
-            </p>
-
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur.
-            </p>
-
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur.
-            </p>
-
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur.
-            </p>
-
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur.
-            </p>
-
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur.
-            </p>
-
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
-            </p>
-
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-              ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-              aliquip ex ea commodo consequat. Duis aute irure dolor in
-              reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-              pariatur.
-            </p>
-
-            <p>
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-              officia deserunt mollit anim id est laborum.
+            <p className="text-xl w-full max-w-4xl">
+              The preferred approach is to use the Siren logo by itself,
+              unlocked from the wordmark. This allows flexibility to present the
+              Siren with greater prominence while maintaining a considered, open
+              and modern presentation.
             </p>
           </div>
-        </main>
+          <div>
+            <h1 className="text-3xl sm:text-xl font-bold my-2">Case Studies</h1>
+            <p className="mb-8 text-3xl w-full max-w-4xl">
+              The Siren is our muse, the face of our brand. Her image and our
+              strong wordmark are our most recognizable brand assets.
+            </p>
+            <p className="text-xl sm:text-sm w-full max-w-4xl">
+              The preferred approach is to use the Siren logo by itself,
+              unlocked from the wordmark. This allows flexibility to present the
+              Siren with greater prominence while maintaining a considered, open
+              and modern presentation.
+            </p>
+          </div>
+          <div ref={ref} className="py-24">
+            <h1 className="text-3xl font-bold my-2">Theory</h1>
+            <p className="mb-8 text-3xl w-full max-w-4xl">
+              The Siren is our muse, the face of our brand. Her image and our
+              strong wordmark are our most recognizable brand assets.
+            </p>
+            <p className="text-xl w-full max-w-4xl">
+              The preferred approach is to use the Siren logo by itself,
+              unlocked from the wordmark. This allows flexibility to present the
+              Siren with greater prominence while maintaining a considered, open
+              and modern presentation.
+            </p>
+          </div>
+          <div>
+            <h1 className="text-3xl sm:text-xl font-bold my-2">Case Studies</h1>
+            <p className="mb-8 text-3xl w-full max-w-4xl">
+              The Siren is our muse, the face of our brand. Her image and our
+              strong wordmark are our most recognizable brand assets.
+            </p>
+            <p className="text-xl sm:text-sm w-full max-w-4xl">
+              The preferred approach is to use the Siren logo by itself,
+              unlocked from the wordmark. This allows flexibility to present the
+              Siren with greater prominence while maintaining a considered, open
+              and modern presentation.
+            </p>
+          </div>
+        </MainContent>
+        <Footer
+          src={Logo_logo}
+          title="Essence"
+          items={[
+            {
+              title: 'Follow Us',
+              content: [
+                { label: 'Instagram', link: 'https://www.instagram.com/' },
+                { label: 'Facebook', link: 'https://www.facebook.com/' },
+                { label: 'Twitter', link: 'https://twitter.com/' },
+              ],
+            },
+          ]}
+          className="mt-20"
+        />
       </div>
-      <Footer
-        src={Logo_logo}
-        title="Essence"
-        items={[
-          {
-            title: "Follow Us",
-            content: [
-              { label: "Instagram", link: "https://www.instagram.com/" },
-              { label: "Facebook", link: "https://www.facebook.com/" },
-              { label: "Twitter", link: "https://twitter.com/" }
-            ]
-          },
-        ]}
-        className="mt-20"
-      />
-    </>
-  );
+    </div>
+  )
 }
