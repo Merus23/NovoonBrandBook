@@ -6,8 +6,9 @@ import Image from "next/image";
 import NavBar from "./components/NavBarMobile/NavBarMobile";
 import SideMenu from "./components/SideMenu/SideMenu";
 import Logo from "/public/assets/images/logo-teste.svg";
-import Logo_logo from '/public/assets/logo_logo.png';
+import Logo_logo from "/public/assets/logo_logo.png";
 import Footer from "./components/Footer/Footer";
+import Title from "./components/Title/Title";
 
 const menuSections = [
   {
@@ -65,11 +66,14 @@ export default function Home() {
         <NavBar logo={logo} title="Novoon" onClose={toggleSidebar} />
         <main className="flex flex-col items-center w-full px-16 md:px-28 pt-20 md:pt-0">
           <div
-            className={`${!show ? "md:pr-64 transition-margin duration-300" : ""
-              }`}
+            className={`w-full ${
+              !show ? "md:pr-64 transition-margin duration-300" : ""
+            }`}
           >
-            <h1 className="text-3xl font-bold p-10">Home</h1>
-            <p>
+            <Title title="brand colors" />
+            {/* <h1 className="text-3xl font-bold p-10">Home</h1> */}
+
+            {/* <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
               ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -179,7 +183,7 @@ export default function Home() {
             <p>
               Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
               officia deserunt mollit anim id est laborum.
-            </p>
+            </p> */}
           </div>
         </main>
       </div>
@@ -192,8 +196,8 @@ export default function Home() {
             content: [
               { label: "Instagram", link: "https://www.instagram.com/" },
               { label: "Facebook", link: "https://www.facebook.com/" },
-              { label: "Twitter", link: "https://twitter.com/" }
-            ]
+              { label: "Twitter", link: "https://twitter.com/" },
+            ],
           },
         ]}
         className="mt-20"
